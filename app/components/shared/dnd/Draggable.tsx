@@ -1,10 +1,15 @@
 /* eslint-disable prettier/prettier */
 // Draggable.jsx
-import React from "react";
+import React, { ReactNode } from "react";
 import { useDraggable } from "@dnd-kit/core";
 import { CSS } from "@dnd-kit/utilities";
 
-export function Draggable({ id, children }) {
+interface DraggableProps {
+    id: string;
+    children: ReactNode;
+  }
+
+export function Draggable({ id, children }: DraggableProps) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
     id,
   });
